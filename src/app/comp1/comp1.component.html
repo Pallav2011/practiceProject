@@ -1,5 +1,5 @@
 <!-- Data Binding -->
-
+<div class="container">
 <!-- one way data binding -->
 
 <!-- 1) string interpolation binding
@@ -7,15 +7,20 @@ binds data from TS to HTML by using {{}} double curly braces
 -->
 <h3>Developer Name : {{developerName}}</h3>
 
+<hr>
 <!-- 2) property binding
 binds the property of DOM element by using [] square brackets from TS to HTML
 -->
 <img class="imageSize" [src]="imageSource" alt="laptop image"> <br><br>
 
+<hr>
 <!-- 3) event binding
 binds data from HTML to TS by using () rounded paranthesis, mostly used to trigger the events like click, hover, etc -->
 <button (click)="changeImage()">Change Image</button> <br><br>
+<input id="r-margin" type="text" (keyup)="onKeyUp($event)">{{keyUpValue}}
+<br>
 
+<hr>
 <!-- two way data binding
 binds data from two sides HTML to TS and TS to HTML, its combination of property binding and event binding,
 we use syntax [(ngModel)], its also called as banana in box, here ngModel is the directive, 
@@ -23,3 +28,5 @@ we need to import FormsModule to work with two way data binding,
 -->
 <input type="text" class="textboxDesign" [(ngModel)]="value">
 TextBox Value : {{value}}
+
+</div>
