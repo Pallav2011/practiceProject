@@ -2,25 +2,29 @@
     <h3>
         <details>
             <summary>Input Docorator</summary>
-            <p style="font-size:large;">
-                input decorator is used to pass data from parent component to 
-                child component. but there is one condition that is need the 
-                relationship between them.
-            </p>
-            <button (click)="gotoParent()">Click here to go parent component</button>
-
+                <ul class="paraDesign">
+                    <li>Input decorator is used to pass data from <span style="color: deeppink;"> parent component to 
+                        child component</span>.</li>
+                    <li>but there is one condition that is need the relationship between them.</li>
+                    <li>@Input() Decorator is declared in Child component.</li>
+                    <li>Syntax -> @Input() decorator_name:Datatype;</li>
+                </ul>               
         </details>
     </h3>
-
 
     <h3>
         <details>
-            <summary>Output Docorator</summary>
-            <p style="font-size:large;">
-                output decorator is used to pass data from child component to 
-                parent component with the help of eventEmitter. but there is one condition that is need the 
-                relationship between them.
-            </p>
+            <summary>Output Docorator</summary> 
+                <ul class="paraDesign">
+                    <li>Output decorator is used to pass data from <span style="color: deeppink;"> child component to 
+                        parent component </span> with the help of EventEmitter.</li>
+                    <li>but there is one condition that is need the relationship between them.</li>
+                    <li>@Output() Decorator is also declared in Child component.</li>
+                    <li>Syntax -> @Output() decorator_name : EventEmitter datatype = new EventEmitter datatype ();</li>
+                </ul>
         </details>
     </h3>
+
+    <app-parentcomponent></app-parentcomponent>
+  
 </div>

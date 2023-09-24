@@ -1,11 +1,55 @@
 
 <div class="container">
-<h2>Welcome to parent component!!!</h2>
-  Name : {{name}} <br>
-  mobile No : {{mobileNo}}
+  <div class="row">
+    <div class="col-md-6" style="background-color: sandybrown;">
+      <h2 style="color: green;">Welcome to parent component!!!</h2>
 
-<br><br>
-  <button>click here to send this details to child component</button>
+      <form action="" #appForm="ngForm">
+        <table>
+          <tbody>
 
-  <app-childcomponent [childDeco]="parentValue"></app-childcomponent>
+            <tr>
+              <td>
+                <label for="userName">Enter your name: </label>
+              </td>
+              <td>
+                <input type="text" name="userName" ngModel #userName="ngModel">
+                <small *ngIf="!userName.dirty && userName.touched" class="text-danger">Enter user name</small>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <label for="mobileNo">Enter your mobile No: </label>
+              </td>
+              <td>
+                <input type="number" name="mobileNo" ngModel #mobileNo="ngModel">
+                <small *ngIf="!mobileNo.dirty && mobileNo.touched" class="text-danger">Enter Mobile Number</small>
+              </td>
+            </tr>
+            
+            <tr>
+              <td>
+                <button class="btn btn-primary" (click)="sendData(appForm)">Send to child</button>
+                <!-- <small *ngIf="appForm.ng-dirty" class="text-danger">please feel the blank fields</small> -->
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </form>
+      <hr>
+
+      <p>
+        Users adress : {{comeFromChild.adress}} <br>
+        Users Age : {{comeFromChild.age}}
+      </p>
+
+    </div>
+
+    <div class="col-md-6" style="background-color:aquamarine;">
+      <app-childcomponent [childDeco]="userDetails" (childToParent)="saveData($event)"></app-childcomponent> <br><br>
+    </div>
+
+</div>
 </div>

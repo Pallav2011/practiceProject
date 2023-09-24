@@ -1,4 +1,32 @@
-<!-- Data Binding -->
+<div class="container">
+    <details>
+        <summary style="font-size: x-large;">Data Binding</summary>
+        <ul>
+            <li>data binding means we are binds data from HTML to TS and TS to HTML.</li>
+            <li>there are mainly two types data binding techniques in Angular.</li>
+            <ol>
+                <li>One way Data Binding</li>
+                <li>Two way Data Binding</li>
+            </ol>
+        </ul>
+    </details>
+
+    <details>
+        <summary style="font-size: x-large;">One way Data binding</summary>
+        <ul>
+            <li>one way data binding means we are binding the data at only side.</li>
+            <li>either HTML to TS or TS to HTML.</li>
+            <li>there are 3 types of one way data binding techniques</li>
+            <ol>
+                <li>String interpolation binding</li>
+                <li>property binding</li>
+                <li>Event binding</li>
+            </ol>
+        </ul>
+    </details>
+
+</div>
+
 <div class="container">
 <!-- one way data binding -->
 
@@ -17,7 +45,7 @@ binds the property of DOM element by using [] square brackets from TS to HTML
 <!-- 3) event binding
 binds data from HTML to TS by using () rounded paranthesis, mostly used to trigger the events like click, hover, etc -->
 <button (click)="changeImage()">Change Image</button> <br><br>
-<input id="r-margin" type="text" (keyup)="onKeyUp($event)">{{keyUpValue}}
+<input id="r-margin" type="text" (keyup)="onKeyUp($event)" placeholder="Enter something here">{{keyUpValue}}
 <br>
 
 <hr>

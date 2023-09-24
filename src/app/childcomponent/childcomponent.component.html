@@ -1,10 +1,49 @@
 <div class="container">
 
-<h3>
-    Welcome to child decorator !!!
+<h3 style="color: red;">
+    Welcome to child component !!!
 </h3>
 
 <p>
-    {{childDeco}}
+  User Name : {{childDeco.userName}} <br>
+  Mobile No : {{childDeco.mobileNo}}
 </p>
+
+<hr>
+
+<form action="" #appForm="ngForm">
+    <table>
+      <tbody>
+
+        <tr>
+          <td>
+            <label for="adress">Enter your adress: </label>
+          </td>
+          <td>
+            <input type="text" name="adress" ngModel #adress="ngModel">
+            <small *ngIf="!adress.dirty && adress.touched" class="text-danger">Enter adress</small>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="age">Enter your age: </label>
+          </td>
+          <td>
+            <input type="number" name="age" ngModel #age="ngModel">
+            <small *ngIf="!age.dirty && age.touched" class="text-danger">Enter age</small>
+          </td>
+        </tr>
+        
+        <tr>
+          <td>
+            <button class="btn btn-primary" (click)="sendData(appForm)">Send to Parent</button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </form>
+
+<!-- <button (click)="sendData()">Send to Parent</button> -->
 </div>

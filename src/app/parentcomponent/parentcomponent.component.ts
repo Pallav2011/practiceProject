@@ -7,13 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentcomponentComponent implements OnInit {
 
+  userDetails = {}
+  comeFromChild = {}
   constructor() { }
 
   ngOnInit() {
   }
-  name:string = 'Pallav Ranpise';
-  mobileNo:number = 9145437409;
 
-  parentValue = 'I am come from parent'; 
+  sendData(form){
+    this.userDetails = form.value;
+  }
 
+  saveData(data){
+    this.comeFromChild = data;
+  }
 }
