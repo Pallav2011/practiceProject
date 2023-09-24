@@ -7,6 +7,9 @@ import { Comp1Component } from './comp1/comp1.component';
 import { FormsModule } from '@angular/forms';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { HomeComponent } from './home/home.component';
+import { DecoratorsComponent } from './decorators/decorators.component';
+import { ParentcomponentComponent } from './parentcomponent/parentcomponent.component';
+import { ChildcomponentComponent } from './childcomponent/childcomponent.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +17,9 @@ import { HomeComponent } from './home/home.component';
     Comp1Component,
     PagenotfoundComponent,
     HomeComponent,
+    DecoratorsComponent,
+    ParentcomponentComponent,
+    ChildcomponentComponent,
   ],
   imports: [
     BrowserModule,
