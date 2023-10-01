@@ -1,0 +1,170 @@
+<div class="container">
+    <h3>Directives</h3>
+    <h5>
+        It help us to manupulate and change the behaviour of DOM elements. <br>
+        Their are following 4 types of directives.
+    </h5>
+    <h6>
+        <ol style="color: purple;">
+            <li>Component Directive</li>
+            <li>Structural Directive</li>
+            <li>Attribute Directive</li>
+            <li>Custom Directive</li>
+        </ol>
+    </h6>
+    <hr>
+    <h3>1. Component Directive</h3>
+    <P>Component directives are based on component. Actually, each component can be used as directive.
+        Component provides @Input and @Output decorator to send and receive information between parent and child
+        components. <br>
+        when we create a relation between parent component and child component that time we can add the selector of
+        child component
+        into the parent components view(.html page) side. similar as following
+    </P>
+    <img src="./assets/compDirective.png" alt="">
+    <hr>
+    <br>
+    <h3>2. Structural Directive</h3>
+    <p>
+        Structural directives change the structure of DOM by adding or removing elements.
+        It is denoted by * sign with three pre-defined directives NgIf, NgFor and NgSwitch.
+    </p>
+    <ol style="list-style-type:lower-alpha;">
+        <li>*NgIf Directive</li>
+        <li>*NgFor Directive</li>
+        <li>*NgSwitch Directive</li>
+    </ol>
+
+    <h3>2a. *NgIf Directive</h3>
+    <p>NgIf directive is used to display or hide data in your application based on the condition becomes true or false.
+        <br>
+        following is the example of *ngif directive, i.e. how it works depends on condition becomes true or false. <br>
+        syntax -> <code> *ngIf="true/false"</code>
+    </p>
+
+    <button (click)="displayData()"> Click to make condition True</button>
+    <strong *ngIf="display" class="text-success">Data is displayed</strong>
+    <button (click)="hideData()" class="leftMargin">Click to make condition False</button>
+    <strong *ngIf="hide" class="text-danger">Data is Hide</strong>
+    <br><br>
+
+    <div *ngIf="display" class="divMarginLeft">
+        <img [src]="myDetails.profilePic" class="profilePicSize" alt="Pallav Ranpise Profile picture"> <br>
+        <h5 style="color: orangered;">
+            Name : {{myDetails.name}} <br>
+            Address : {{myDetails.address}} <br>
+            Contact No : {{myDetails.contactNo}}
+        </h5>
+    </div>
+
+    <hr>
+
+    <h3>2b. *NgFor Directive</h3>
+
+    <ul style="list-style-type: square;">
+        <li>
+            It is used to repeat a portion of HTML template once per element.
+            Mostly used to display elements of array.
+        </li>
+        <li>
+            syntax ->   <code> *ngFor="let variable_name of array_name"</code>
+        </li>
+        <li>
+            Exa. <code>*ngFor="let f of friendsArray"</code>
+        </li>
+    </ul>
+
+    <p>
+
+        <img src="./assets/array.png" alt=""> <br><br>
+        following table display the list of friends in tabular form by using *ngFor directive, Actually it is one array
+        in above image. <br>
+        Here we are iterate the table row for every element of "arrayOfFriends", we don't need to write the seprate
+        table row for each element of array.
+
+    </p>
+
+    <table class="table">
+        <tbody>
+            <tr *ngFor="let f of arrayOfFriends; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{f}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+<hr>
+
+    <h3>2c. *NgSwitch Directive</h3>
+    <ul style="list-style-type: square;">
+        <li>
+            NgSwitch is used to check multiple conditions and keep the DOM structure as simple and easy to understand.
+        </li>
+        <li>syntax -> <code>[ngSwitch]="value" <br>
+        *ngSwitchCase="'value'" <br>
+        *ngSwitchDefault="'value'" <br>
+          </code></li>
+        <li>
+            in above syntax  for *ngSwitchCase you can take multiple cases, hence called one selection from multiple options. you 
+            are also set default value using *ngSwitchDefault. set the value in ('')single coat which is already inside ("") 
+            double coat same as this -> "'value'".
+        </li>
+    </ul>
+    Please select the question paper type : 
+    <select name="" id="" (change)="selectedOption($event)">
+        <option *ngFor="let opt of multipleOptions" value="{{opt}}">{{opt}}</option>
+    </select>
+
+    <div [ngSwitch]="selectedValue">
+        <h4 *ngSwitchCase="'Easy'">You are selected Easy</h4>
+        <h4 *ngSwitchCase="'Medium'">You are selected Medium</h4>
+        <h4 *ngSwitchCase="'Hard'">You are selected Hard</h4>
+        <h4 *ngSwitchCase="'Very Hard'">You are selected Very Hard</h4>
+        <h4 *ngSwitchDefault style="color: red;">Please select one option</h4>
+    </div>
+
+    <hr>
+
+    <h3>3. Attribute Directive</h3>
+    <p>
+        Attribute directives performs the appearance or behavior of DOM elements or components. Some of the examples are NgStyle ang NgClass.
+    </p>
+        <strong>
+            <ol style="color: purple;list-style-type: lower-alpha;" >
+                <li>NgStyle</li>
+                <li>NgClass</li>
+            </ol>
+        </strong>
+        
+        <h3>3a. ngStyle Directive</h3>
+            <ul style="list-style-type: square;">
+                <li>ngStyle directive is used to add dynamic styles. it is used to setting up the style attribute of DOM element.
+                    we can set on or more properties.
+                </li>
+                <li>syntax -> <code>[ngStyle]= {{ '"{property_name:value,property_name:value,...n}"' }}</code></li> <br>
+                <li>
+                    <img src="./assets/code.png" alt="">
+                </li>
+                <li>following is the output of above code using ngStyle directive.</li>
+                <li>
+                    <p [ngStyle]="{'color':'green','font-size':'larger'}">i am the example of ngStyle attribute</p>
+                </li>
+            </ul>    
+
+            <hr>
+
+        <h3>3b. ngClass Directive</h3>
+        <ul style="list-style-type: square;">
+            <li>ngClass is used to add or remove CSS classes in HTML elements.</li>
+            <li>syntax -> <code>[ngClass]={{'"{class_name:true or false or any_condition}"'}}</code></li>
+            <li><img src="./assets/codeNgClass.png" alt=""></li>
+            <li>Exa. following 'user1' is displayed in orange colour becouse of ngClass directive is used</li>
+            <ul *ngFor="let u of userList" [ngClass]="{'highlight':u.userName == 'user1'}">   
+                <li>{{u.userName}}</li>
+            </ul>
+        </ul>
+
+        <hr>
+
+        <h3>4. Custom Directive</h3>
+</div>

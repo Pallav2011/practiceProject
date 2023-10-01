@@ -1,0 +1,33 @@
+.leftMargin {
+    margin-left: 200px;
+}
+
+.profilePicSize {
+    height: 400px;
+    width: 400px;
+    border:solid 5px black;
+}
+
+.divMarginLeft {
+    margin-left: 200px;
+}
+
+.table,tr,td {
+    width: 400px;
+    text-align: center;
+    background-color:lightgoldenrodyellow;
+    border: solid 1px black;
+    margin-left: 30px;
+}
+
+h3 {
+    color: darkblue;
+}
+
+h4 {
+    color: rgb(255, 0, 204);
+}
+
+.highlight {
+    color: darkorange;
+}

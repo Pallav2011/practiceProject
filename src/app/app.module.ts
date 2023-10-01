@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { DecoratorsComponent } from './decorators/decorators.component';
 import { ParentcomponentComponent } from './parentcomponent/parentcomponent.component';
 import { ChildcomponentComponent } from './childcomponent/childcomponent.component';
+import { DirectiveComponent } from './directive/directive.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ChildcomponentComponent } from './childcomponent/childcomponent.compone
     DecoratorsComponent,
     ParentcomponentComponent,
     ChildcomponentComponent,
+    DirectiveComponent,
   ],
   imports: [
     BrowserModule,

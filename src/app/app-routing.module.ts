@@ -6,6 +6,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { HomeComponent } from './home/home.component';
 import { DecoratorsComponent } from './decorators/decorators.component';
 import { ParentcomponentComponent } from './parentcomponent/parentcomponent.component';
+import { DirectiveComponent } from './directive/directive.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:'databinding',component:Comp1Component},
   {path:'decorator', component:DecoratorsComponent},
   {path:'parent', component:ParentcomponentComponent},
+  {path:'directive', component:DirectiveComponent},
   {path:'**',component:PagenotfoundComponent}
 ];
 

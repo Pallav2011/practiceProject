@@ -1,60 +1,111 @@
 <div class="container">
     <details>
-        <summary style="font-size: x-large;">Data Binding</summary>
+        <summary >Data Binding</summary>
         <ul>
+            <li>It is main building block of Angular application.</li>
+            <li>It is communication between components and DOM.</li>
             <li>data binding means we are binds data from HTML to TS and TS to HTML.</li>
-            <li>there are mainly two types data binding techniques in Angular.</li>
+            <li>there are mainly two types of data binding techniques in Angular.</li>
             <ol>
                 <li>One way Data Binding</li>
                 <li>Two way Data Binding</li>
             </ol>
         </ul>
     </details>
-
+<hr>
     <details>
-        <summary style="font-size: x-large;">One way Data binding</summary>
+        <summary >One way Data binding</summary>
         <ul>
-            <li>one way data binding means we are binding the data at only side.</li>
+            <li>one way data binding means we are binding the data at only one side.</li>
             <li>either HTML to TS or TS to HTML.</li>
             <li>there are 3 types of one way data binding techniques</li>
             <ol>
                 <li>String interpolation binding</li>
-                <li>property binding</li>
+                <li>Property binding</li>
                 <li>Event binding</li>
             </ol>
         </ul>
+<hr>
+        <details>
+            <summary >String Interpolation Binding</summary>
+            <ul>
+               <li>we are binding string data from TS to HTML.</li>
+               <li>the variable value is displayed on HTML side by using {{"{{ }\}"}} double curly braces.</li>
+               <li>
+                    <code>syntax -> {{ "{{Variable_name}\}" }} </code>
+               </li>
+               <li>
+                <h4>Developer Name : <span style="color: darkviolet;">{{developerName}}</span> </h4>
+               </li>
+               <li>violet coloured developer name in above line is binds by using string interpolation binding.</li>
+            </ul>
+        </details>
+<hr>
+        <details>
+            <summary  > Property Data Binding</summary>
+            <ul>
+                <li>binds data from TS to HTML.</li>
+               <li>we are binding the properties of DOM elements by using [ ] square bracket.</li>
+               <li>
+                    <code>syntax -> {{ "[Property_name] = variable_name" }}</code>
+               </li>
+               <li>following image is displayed by using property binding, we are binds the "src" property of img tag with the variable 
+                which holds the URL as a value. </li>
+            </ul>
+
+            <img class="imageSize" [src]="imageSource" alt="laptop image"> 
+        </details>
+<hr>
+        <details>
+            <summary > Event Data Binding</summary>
+            <ul>
+               <li>binds data from HTML to TS by using ( ) rounded paranthesis.</li>
+               <li>Mostly used to trigger the events like click, hover, keyup, etc.</li>
+               <li>
+                    <code>syntax -> {{ "(event_name) = method_name()" }}</code>
+               </li>
+               <li>in above syntax method_name means we can write any method in TS side
+                 and call or invoke that method using events from HTML side. </li>
+               <li>
+                <button (click)="changeImage()">Click here to Change the above Image</button>
+                <strong *ngIf="imageChanged" class="text-success"> Image is Changed successfully !!!</strong>
+               </li>
+               <li>when you click to above button then it can change the above image and display the message "image is Changed successfully"
+                 in green Colour, and its possible becouse of event binding,we are using "click" event on button
+                 and invoking the method to change the image with the help of event binding. </li>
+                <li>
+                    <input id="r-margin" type="text" (keyup)="onKeyUp($event)" placeholder="Enter something here">
+                    <strong class="text-success">{{keyUpValue}}</strong> 
+                </li>
+                <li>in above textbox we are using "keyup" event, it can trigger the event on every key press. displays
+                    entered data front of textbox using string interpolation binding.
+                </li>
+            </ul>
+
+        </details>
     </details>
-
-</div>
-
-<div class="container">
-<!-- one way data binding -->
-
-<!-- 1) string interpolation binding
-binds data from TS to HTML by using {{}} double curly braces
--->
-<h3>Developer Name : {{developerName}}</h3>
-
 <hr>
-<!-- 2) property binding
-binds the property of DOM element by using [] square brackets from TS to HTML
--->
-<img class="imageSize" [src]="imageSource" alt="laptop image"> <br><br>
-
-<hr>
-<!-- 3) event binding
-binds data from HTML to TS by using () rounded paranthesis, mostly used to trigger the events like click, hover, etc -->
-<button (click)="changeImage()">Change Image</button> <br><br>
-<input id="r-margin" type="text" (keyup)="onKeyUp($event)" placeholder="Enter something here">{{keyUpValue}}
-<br>
-
-<hr>
-<!-- two way data binding
-binds data from two sides HTML to TS and TS to HTML, its combination of property binding and event binding,
-we use syntax [(ngModel)], its also called as banana in box, here ngModel is the directive, 
-we need to import FormsModule to work with two way data binding,
--->
-<input type="text" class="textboxDesign" [(ngModel)]="value">
-TextBox Value : {{value}}
+    <details>
+        <summary >Two way Binding</summary>
+        <ul>
+           <li>we are binding data from two sides at a time means TS to HTML and HTML to TS.</li>
+           <li>it is combination of [ ] property binding and ( ) event binding.</li>
+           <li>
+                <code>syntax -> {{ "[(ngModel)]" }} </code>
+           </li>
+           <li>it is also called as "BANANA IN BOX".</li>
+           <li>The ngModel directive is a directive that is used to bind the values of the HTML controls (input, select, and textarea)
+             or any custom form controls, and stores the required user value in a variable and we can use that variable whenever
+             we require that value.</li>
+             <li>
+                <input type="text" class="textboxDesign" [(ngModel)]="value">
+                TextBox Value : {{value}}
+             </li>
+             <li>in above textbox already value displays becouse of property binding and when you enter the new value and display that 
+                new value its by using event binding with the help of ngModel.
+             </li>
+             <li>in above example we need to import FormsModule.</li>
+        </ul>
+    </details>    
 
 </div>

@@ -10,3 +10,8 @@
 #r-margin {
     margin-right: 50px;
 }
+
+summary {
+    font-size: x-large;
+    color: darkblue;
+}
