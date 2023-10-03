@@ -11,6 +11,7 @@ import { DecoratorsComponent } from './decorators/decorators.component';
 import { ParentcomponentComponent } from './parentcomponent/parentcomponent.component';
 import { ChildcomponentComponent } from './childcomponent/childcomponent.component';
 import { DirectiveComponent } from './directive/directive.component';
+import { CustumdirectiveDirective } from './custumdirective.directive';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { DirectiveComponent } from './directive/directive.component';
     ParentcomponentComponent,
     ChildcomponentComponent,
     DirectiveComponent,
+    CustumdirectiveDirective,
   ],
   imports: [
     BrowserModule,

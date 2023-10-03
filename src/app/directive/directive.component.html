@@ -166,5 +166,19 @@
 
         <hr>
 
-        <h3>4. Custom Directive</h3>
+        <h3 appCustumdirective>4. Custom Directive</h3>
+
+            <ul [ngStyle]="{'list-style-type':'square'}">
+                <li> Angular provides option to extend the angular directive with user defined directives and it is called Custom directives.</li>
+                <li>Angular CLI provides following command to create directive.</li>
+                <li [ngStyle]="{'color':'pink'}">ng generate directive name</li>
+                <li>CLI command creates the (.directive.ts) file to write the directive code.</li>
+                <li>we are DI the ElementRef object from angulare/core library in the constructor of (.directive.ts) file.</li>
+                <li>we use (.nativeElement) method to work with custom directive.</li>
+                <img src="./assets/custumDirectiveCode.png" alt="">
+                <li>then we use the selector name on our DOM element to use custom directive same as following.</li>
+                <img src="./assets/cdCode.png" alt="">
+                <li>above heading of custom directive is displayed background color yellow is becouse of custom directive is used.</li>
+            </ul>
+
 </div>
