@@ -10,8 +10,8 @@ import { DirectiveComponent } from './directive/directive.component';
 
 
 const routes: Routes = [
-  {path:'', redirectTo:'home',pathMatch:'full'},
-  {path:'home',component:HomeComponent},
+  {path:'', redirectTo:'introduction',pathMatch:'full'},
+  {path:'introduction',component:HomeComponent},
   {path:'databinding',component:Comp1Component},
   {path:'decorator', component:DecoratorsComponent},
   {path:'parent', component:ParentcomponentComponent},
